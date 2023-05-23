@@ -1,9 +1,9 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
 /* Exportando la Conexion */
 module.exports = (sequelize) => {
   /* Definimos el Models */
   sequelize.define(
-    'recipe',
+    "recipe",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -35,11 +35,11 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      createIndb: {
+      /*    createIndb: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: false,
-      },
+      }, */
     },
     { timestamps: false }
   );

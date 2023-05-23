@@ -1,12 +1,14 @@
-const axios = require('axios');
+const axios = require("axios");
 const { API_KEY } = process.env;
-const { Recipe, Diet } = require('../db');
+const { Recipe, Diet } = require("../db");
 
 /* Obtengo  las recetas de la Api */
 const getApiInfo = async () => {
   const lengthdata = await Recipe.findAll();
   if (lengthdata.length < 100) {
     const urlApi = await axios.get(
+      //"https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5%60"
+
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true`
     );
     await urlApi.data.results.map(async (el) => {
@@ -27,7 +29,7 @@ const getApiInfo = async () => {
       recipeCreated.addDiet(dietDb);
     });
   } else {
-    console.log('los datos de recetas ya estan cargados 202');
+    console.log("los datos de recetas ya estan cargados 202");
   }
 };
 
@@ -36,9 +38,9 @@ const getDbinfo = async () => {
   return await Recipe.findAll({
     include: {
       model: Diet,
-      atrributes: ['name'],
+      atrributes: ["name"],
       through: {
-        atrributes: ['id', 'name'],
+        atrributes: ["id", "name"],
       },
     },
   });
@@ -49,5 +51,3 @@ module.exports = {
   getDbinfo,
   getApiInfo,
 };
-
-
