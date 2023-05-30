@@ -1,0 +1,22 @@
+.button__paginado {
+  background: linear-gradient(180deg, #fdc50f 26.71%, #fb982f 99.36%);
+
+  font-size: 20px;
+  border: 1px solid white;
+  color: white;
+  border-radius: 16%;
+  margin-bottom: 1rem;
+}
+.b__active {
+  background: white;
+  cursor: pointer;
+  border: 1px solid var(--orange);
+  color: var(--orange);
+}
+
+.button__paginado:hover {
+  background: white;
+  cursor: pointer;
+  border: 1px solid var(--orange);
+  color: var(--orange);
+}

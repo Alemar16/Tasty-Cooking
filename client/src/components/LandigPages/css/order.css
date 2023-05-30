@@ -1,0 +1,155 @@
+/*Order*/
+/* 
+.order {
+  width: 100%;
+  height: 100vh;
+  padding: 70px 0;
+  background-image: url('../img/bg1.jpg');
+
+  background-position: center;
+}
+
+.order h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 55px;
+}
+
+.order h1 span {
+  color: #fac031;
+  margin-right: 15px;
+  font-family: mv boli;
+}
+
+.order h1 span::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #fac031;
+  display: block;
+  position: relative;
+  bottom: 15px;
+}
+
+.order .order_main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.order .order_main .order_image img {
+  width: 350px;
+} */
+
+/*Team*/
+
+.team {
+  width: 100%;
+  height: 90vh;
+  background-image: url('../img/bg1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.team h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 55px;
+  margin-bottom: 30px;
+}
+
+.team h1 span {
+  color: #fac031;
+  margin-left: 15px;
+  font-family: mv boli;
+}
+
+.team h1 span::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #fac031;
+  display: block;
+  position: relative;
+  bottom: 15px;
+}
+
+.team .team_box {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 13%;
+}
+
+.team .team_box .profile {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  transition: 0.4s;
+}
+
+.team .team_box .profile:hover {
+  border-radius: 20px;
+  height: 320px;
+}
+
+.team .team_box .profile img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  transition: 0.4s;
+}
+
+.team .team_box .profile:hover img {
+  border-radius: 20px;
+  margin-top: -230px;
+}
+
+.team .team_box .profile .info {
+  position: absolute;
+  text-align: center;
+  top: 25%;
+  transition: 0.4s;
+}
+
+.team .team_box .profile:hover .info {
+  top: 60%;
+}
+
+.team .team_box .profile .info .name {
+  color: #fac031;
+  margin-bottom: 15px;
+}
+
+.team .team_box .profile .info .bio {
+  width: 70%;
+  text-align: center;
+  margin: 0 auto 10px auto;
+}
+
+.team .team_box .profile .info .team_icon i {
+  margin: 10px 5px 5px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.team .team_box .profile .info .team_icon i:hover {
+  color: #fac031;
+}

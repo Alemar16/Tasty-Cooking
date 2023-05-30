@@ -1,0 +1,28 @@
+.container__filtros {
+  /* background-color: red; */
+  margin: 1rem;
+}
+.container__filtros select {
+  padding: 6px 12px;
+  color: #333;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.container__filtros select:hover {
+  outline: none;
+  border: 1px solid #bbb;
+}
+.container__filtros select option {
+  background-color: #fff;
+}
+.container__filtros button {
+  padding: 6px 12px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
