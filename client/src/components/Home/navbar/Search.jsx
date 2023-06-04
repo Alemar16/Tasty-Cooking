@@ -9,7 +9,7 @@ export default function Search() {
   /*  const pagereset = useSelector((state) => state.page);  */
   //const [name, setName] = useState('');
 
-  function handleInputChangue(e) {
+  function handleInputChange(e) {
     e.preventDefault();
     // setName(e.target.value);
     dispatch(paginado(1));
@@ -21,7 +21,7 @@ export default function Search() {
       <div className="container__shear">
         <div>
           <input
-            onChange={handleInputChangue}
+            onChange={handleInputChange}
             type="text"
             placeholder="search Recipe"
           />

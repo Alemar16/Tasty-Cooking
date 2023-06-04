@@ -9,18 +9,19 @@ import {
   filtercreated,
 } from "../../../redux/actions";
 
-export default function Filtros({ diet, setorder, setscore }) {
+export default function Filtros({ diet }) {
   const dispatch = useDispatch();
 
   function handleOderByname(e) {
     dispatch(orderByaz(e.target.value));
-    setorder(e.target.value);
+    /* setOrder(e.target.value); */
   }
   /* ordenar  por Score Puntuacion */
 
   function handleOrderScore(e) {
+    console.log(handleOrderScore);
     dispatch(orderByscore(e.target.value));
-    setscore(e.target.value);
+    /* setScore(e.target.value); */
   }
 
   function handleFilterDiets(e) {
@@ -39,15 +40,11 @@ export default function Filtros({ diet, setorder, setscore }) {
 
   return (
     <div className="container__filtros">
-      {/* ------------Ordenar de a-z z-a------------ */}
-      <select onChange={handleOderByname} name="orderaz" id="orderaz">
-        <option value="asc">A-z</option>
-        <option value="des">Z-A</option>
-      </select>
       {/*-------------All dietas al select------------ */}
+      <span>Diets</span>
       <select onChange={handleFilterDiets} name="diet" id="diet">
         <option value="defauls" disabled>
-          seleccione..
+          select..
         </option>
         <option value="all" defaultValue>
           All
@@ -58,15 +55,21 @@ export default function Filtros({ diet, setorder, setscore }) {
           </option>
         ))}
       </select>
+      {/* ------------Ordenar de a-z z-a------------ */}
+      <span>Order</span>
+      <select onChange={handleOderByname} name="orderaz" id="orderaz">
+        <option value="defauls" disabled>
+          Alphabetically
+        </option>
+        <option value="asc">A-z</option>
+        <option value="des">Z-A</option>
+      </select>
 
       {/* Filtrar por puntaje Score */}
-      <span>Score</span>
+      <span>HealthScore</span>
       <select onChange={handleOrderScore} name="score" id="score">
-        <option value="asc" hidden>
-          Lower
-        </option>
-        <option value="des" hidden>
-          Higher
+        <option value="defauls" disabled>
+          Punctuation
         </option>
         <option value="asc" selected>
           Lower
@@ -75,7 +78,11 @@ export default function Filtros({ diet, setorder, setscore }) {
       </select>
 
       {/* filtrar los de la base de dtaos */}
+      <span>Created</span>
       <select name="ifoapidb" onChange={handleFilterCreated}>
+        <option value="defauls" disabled>
+          By..
+        </option>
         <option value="all" defaultValue>
           All
         </option>

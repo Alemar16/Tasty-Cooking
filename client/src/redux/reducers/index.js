@@ -14,7 +14,7 @@ import {
 const initialState = {
   recipes: [],
   /* recipesfiterdit: [], */ //copia de recipes
-  allrecipes: [], //copia de recipes
+  allrecipes: [], //recipes
   diets: [],
   details: [],
   page: 1,
@@ -79,8 +79,12 @@ const Reducer = (state = initialState, action) => {
         sortArray.sort((a, b) => b.name.localeCompare(a.name));
       } */
 
-      let sortArray =
-        action.payload === 'asc'
+      let sortArray = [...state.recipes].sort((a, b) => {
+        if (a.name > b.name) return action.payload === 'asc' ? 1 : -1
+        if (a.name < b.name) return action.payload === 'des' ? 1 : -1
+        else return 0;
+      })
+        /* action.payload === 'asc'
           ? state.recipes.sort(function (a, b) {
               if (a.name > b.name) return 1;
               if (a.name < b.name) {
@@ -88,15 +92,14 @@ const Reducer = (state = initialState, action) => {
               } else return 0;
             })
           : /* forma desendente DES */
-            state.recipes.sort(function (a, b) {
+            /* state.recipes.sort(function (a, b) {
               if (a.name > b.name) return -1;
               if (a.name < b.name) return 1;
-              else return 0;
-            });
+              else return 0; */
 
       return {
         ...state,
-        allrecipes: sortArray,
+        recipes: sortArray,
         page: 1,
       };
     case GET_ALL_DIET: {
@@ -106,8 +109,13 @@ const Reducer = (state = initialState, action) => {
       };
     }
     case ORDER_BY_SCORE: {
-      let sortscore =
-        action.payload === 'asc'
+      let sortscore = [...state.recipes].sort((a, b) => {
+        if (a.healthScore > b.healthScore) return action.payload === 'asc' ? 1 : -1
+        if (a.healthScore < b.healthScore) return action.payload === 'des' ? 1 : -1
+        else return 0;
+      }) 
+
+        /* action.payload === 'asc'
           ? state.recipes.sort(function (a, b) {
               if (a.healthScore > b.healthScore) return 1;
               if (a.healthScore < b.healthScore) return -1;
@@ -117,11 +125,11 @@ const Reducer = (state = initialState, action) => {
               if (a.healthScore > b.healthScore) return -1;
               if (a.healthScore < b.healthScore) return 1;
               else return 0;
-            });
+            }); */
 
       return {
         ...state,
-        allrecipes: sortscore,
+        recipes: sortscore,
         page: 1,
       };
     }
@@ -136,7 +144,7 @@ const Reducer = (state = initialState, action) => {
       const createFilter =
         action.payload === 'created'
           ? allcreated.filter((el) => el.createIndb === true)
-          : allcreated.filter((el) => el.createIndb === false);
+          : allcreated.filter((el) => el.createIndb === undefined);
 
       return {
         ...state,

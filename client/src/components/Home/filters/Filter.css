@@ -1,7 +1,16 @@
 .container__filtros {
-  /* background-color: red; */
-  margin: 1rem;
+  background-color: rgba(16, 15, 15, 0.333);
+  box-shadow: 0 0 4px rgba(248, 248, 248, 0.826);
+  border-radius: 8px;
+  display: block;
+  padding: 0.5rem;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #bbb;
 }
+
 .container__filtros select {
   padding: 6px 12px;
   color: #333;
@@ -19,10 +28,17 @@
   background-color: #fff;
 }
 .container__filtros button {
+  color: #bbb;
   padding: 6px 12px;
-  background-color: #eee;
+  background-color: #073354;
   border: 1px solid #ddd;
   cursor: pointer;
   border-radius: 5px;
   margin-right: 10px;
+}
+.container__filtros button:hover {
+  background: rgb(203, 13, 13);
+  cursor: pointer;
+  border: 2px rgb(15, 14, 14) solid;
+  box-shadow: 0px 10px 15px 3px rgb(216, 25, 25);
 }

@@ -1,11 +1,11 @@
-import { React, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { recipesDetils } from '../../redux/actions/index';
-import defaul from '../../assets/img/juse.jpg';
-import './detalle.css';
-import { FaArrowLeft } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { React, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { recipesDetils } from "../../redux/actions/index";
+import defaul from "../../assets/img/juse.jpg";
+import "./detalle.css";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Details() {
   const dispatch = useDispatch();
@@ -14,6 +14,7 @@ export default function Details() {
     dispatch(recipesDetils(id));
   }, [dispatch]);
   let data = useSelector((state) => state.details);
+  console.log(data);
 
   return (
     <div>
@@ -28,6 +29,7 @@ export default function Details() {
                   </p>
                 </div>
               </Link>
+
               <h1>{el.name}</h1>
               <img
                 className="d_imagen"
@@ -47,8 +49,8 @@ export default function Details() {
               <p>Diests</p>
               <div className="d__diets">
                 {el.diets.map((d) => (
-                  <div className="d__parrafo" key={d.name}>
-                    <p>{d.name}</p>
+                  <div className="d__parrafo" key={d}>
+                    <p>{d}</p>
                   </div>
                 ))}
               </div>
@@ -57,10 +59,10 @@ export default function Details() {
           {/* contenedor derecho */}
           <div className="detalle__right">
             <div className="d__desc">
-              <h1>summary</h1>
+              <h1>Summary</h1>
               <p dangerouslySetInnerHTML={{ __html: el?.summary }}></p>
             </div>
-            {!el.stepbyStep ? '' : <h1>StepbyStep </h1>}
+            {!el.stepbyStep ? "" : <h1>Step by Step </h1>}
             <div className="d__pasos">
               <p dangerouslySetInnerHTML={{ __html: el?.stepbyStep }}></p>
             </div>

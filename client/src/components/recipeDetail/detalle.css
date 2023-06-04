@@ -1,13 +1,16 @@
 .detalle {
   display: flex;
-  height: 77vh;
-  margin-top: 2rem;
-  background-image: url('../../assets/img/bg1.jpg');
-  background-color: red;
+  height: 100vh;
+  background-image: url("../../assets/img/black-tablero.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: fixed;
 }
 
 /* etilo lado izquierdo */
 .detalle__left {
+  color: aliceblue;
   display: flex;
   position: relative;
   flex: 1;
@@ -15,6 +18,7 @@
   gap: 2rem;
 }
 .detalle__left .d__diets {
+  color: aliceblue;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -34,6 +38,7 @@
 }
 
 .detalle__right {
+  color: aliceblue;
   flex: 1;
   position: relative;
   min-height: 77vh;

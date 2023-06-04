@@ -1,11 +1,13 @@
 .button__paginado {
   background: linear-gradient(180deg, #fdc50f 26.71%, #fb982f 99.36%);
-
+  box-shadow: 0px 2px 24px 3px rgba(251, 161, 40, 0.42);
+  padding: 2px 10px 2px 10px;
   font-size: 20px;
   border: 1px solid white;
   color: white;
   border-radius: 16%;
   margin-bottom: 1rem;
+  margin: 0 1px;
 }
 .b__active {
   background: white;

@@ -1,168 +1,186 @@
-.container {
-  width: 100%;
-  height: 100vh;
-  background-image: url('../../assets/img/bg2.jpg');
+.create_container {
+background-image: url("../../assets/img/comida-ingredientes.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: center;
-}
-.conatiner__main {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-direction: column; */
+  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
+  min-height: 100vh;
+  width: 100%;
 }
-.order__image img {
-  width: 500px;
+
+.return_btn_position{
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  
+}
+.return_btn_description{
+  background: linear-gradient(180deg, #fdc50f 26.71%, #fb982f 99.36%);
+  box-shadow: 0px 20px 24px 3px rgba(251, 161, 40, 0.42);
+  border-radius: 20px;
+  border: 1px solid white;
+  color: white;
+  font-size: 16px;
+  padding: 2px 40px 2px 40px;
+}
+.return_btn_description:hover {
+  background: white;
+  cursor: pointer;
+  border: 1px solid var(--orange);
+  color: var(--orange);
+}
+
+.order__image{
+position: absolute;
+top: 400px;
+left: 1050px;
+
+
 }
 .forms__info {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  width: 400px;
+  position: absolute;
+  top: 60px;
+  bottom: 20px;
+  left: 500px;
+  width: 500px;
   border-radius: 20px;
+  color: #ffa500;
+  text-shadow: 0px 19px 60px rgba(99, 95, 95, 0.08);
+  background-color: #302b2b85;
   box-shadow: 2px 3px 5px 3px rgb(145, 143, 143);
-}
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.danger {
-  color: red;
-  font-size: 10px;
-}
-
-input.danger {
-  border-bottom: 2px solid red;
-}
-
-.forms__info input {
-  border-style: none;
-  height: 30px;
-  border-radius: 3px;
-  border-bottom: solid 1px;
-  color: grey;
-  margin-bottom: 10px;
-  width: 300px;
-  outline: none;
-}
-
-.forms__info input:hover {
-  border-bottom: solid 1px;
-  border-color: #f5a055;
-  transition: 0.1s linear;
-}
-.forms__info select {
-  border-style: none;
-  height: 30px;
-  border-radius: 3px;
-  border-bottom: solid 1px;
-  color: grey;
-  margin-bottom: 10px;
-  width: 300px;
-  outline: none;
-}
-.forms__info select:hover {
-  border-bottom: solid 1px;
-  border-color: #f5a055;
-  transition: 0.1s linear;
-}
-
-.forms__info textarea {
-  border-style: none;
-  height: 30px;
-  border-radius: 3px;
-  border-bottom: solid 1px;
-  color: grey;
-  outline: none;
-}
-
-.forms__info textarea:hover {
-  outline: none;
-  border-bottom: solid 1px;
-  border-color: #f5a055;
-}
-
-.boton {
-  background-color: rgb(33, 115, 239);
-  cursor: pointer;
-}
-.boton input {
-  color: white;
-}
-.boton__add input {
-  background-color: rgb(33, 115, 239);
-  color: white;
-  opacity: 0.5;
-  margin-bottom: 15px;
-  align-items: center;
-  cursor: pointer;
-  font-weight: bold;
-}
-.boton__new input {
-  background-color: rgb(33, 115, 239);
-  color: white;
-
-  margin-bottom: 15px;
-  align-items: center;
-  cursor: pointer;
-  font-weight: bold;
-}
-.logo_bootom {
-  width: 400px;
-}
-h1 {
-  color: #f5a055;
-  margin-right: 15px;
-}
-.score {
-  display: flex;
-
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.boton__add {
-  align-items: center;
-}
-.diet {
-  width: 300px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-height: 90px;
+   max-height: 590px; /* ajusta la altura máxima según tus necesidades */
   overflow-y: auto;
 }
-.chip {
-  min-height: 30px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: #f5a055;
-  border-radius: 7px;
-  padding: 0 4px;
-  margin: 2px;
-  box-shadow: 3px 3px 5px rgb(145, 143, 143);
+.container::-webkit-scrollbar {
+  width: 15px;
+  background-color: #161515;
 }
-ul li {
-  list-style: none;
-  color: white;
-  height: 25px;
-  margin-bottom: 3px;
-  margin: 5px;
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #181717;
+  border-radius: 4px;
 }
-.buton__x {
-  font-weight: bold;
+
+.container::-webkit-scrollbar-thumb:hover {
+  background-color: #4e4a4a;
+}
+
+/* ------------------------------------ */
+
+/* Estilos para los campos de entrada de texto y select */
+/* Estilos para los campos de entrada de texto y select */
+input[type="text"],
+textarea,
+select {
+  background-color: rgba(255, 255, 255, 0.2);
   color: white;
-  font-size: 20px;
-  height: 25px;
-  width: 25px;
-  cursor: pointer;
-  margin-bottom: 10px;
   border: none;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 16px;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+/* Estilos para el botón de submit */
+input[type="submit"] {
+  background: linear-gradient(180deg, #fdc50f 26.71%, #fb982f 99.36%);
+  box-shadow: 0px 20px 24px 3px rgba(251, 161, 40, 0.42);
+  border-radius: 34px;
+  border: 1px solid white;
+  color: white;
+  font-size: 16px;
+  padding: 11px 26px 11px 26px;
+}
+
+input[type="submit"]:hover {
+  background: white;
+  cursor: pointer;
+  border: 1px solid var(--orange);
+  color: var(--orange);
+}
+
+/* Estilos para los mensajes de error */
+p.danger {
+  color: #f44336;
+}
+
+/* Estilos para los chips de dieta */
+.chip {
+  display: inline-block;
+  background-color: #a8611f;
+  color: #0f0f0f;
+  border-radius: 16px 0 0 16px ;
+  padding: 4px 8px;
+  margin-right: 8px;
+}
+
+.chip li {
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.chip .buton__x {
+  cursor: pointer;
+}
+/* Estilos para la barra de desplazamiento vertical */
+.forms__info::-webkit-scrollbar {
+  width: 8px;
+  background-color: #161515;
+}
+
+.forms__info::-webkit-scrollbar-thumb {
+  background-color: #181717;
+  border-radius: 4px;
+}
+
+.forms__info::-webkit-scrollbar-thumb:hover {
+  background-color: #0f0f0f;
+}
+
+/* Estilos para el texto del selector */
+.forms__info::-webkit-scrollbar-thumb {
+  color: white;
+}
+
+/* Estilos para el fondo del selector */
+.forms__info::-webkit-scrollbar-track {
+  background-color: #222;
+}
+/* Estilos para las opciones del selector */
+.forms__info select option {
   background-color: transparent;
+  color: white;
+}
+
+/* Estilos para el fondo del selector */
+.forms__info select {
+  background-color: #444;
+}
+.scoreTitle {
+  color: white;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.scoreBar {
+  /* background-color: #444; */
+  border-radius: 4px;
+  height: 20px;
+  position: relative;
+}
+
+.scoreNum {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  position: absolute;
+  right: 40px;
+  top: -8px;
 }
