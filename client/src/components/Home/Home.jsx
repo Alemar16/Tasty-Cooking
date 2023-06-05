@@ -31,9 +31,8 @@ const Home = () => {
   currenRecipes = recipe.slice(inicial, indexFinal);
 
   return (
-    <div className="background-home">
-      
-        
+    <div className="home.container">
+      <div className="background-home">
         <div className="container_return_btn">
           <Link to="/">
             <button className="return_btn">Logout</button>
@@ -48,13 +47,13 @@ const Home = () => {
             pageactual={page}
           />
         </div>
-{/* -------------------Navbar------------------- */}
+        {/* -------------------Navbar------------------- */}
         <div className="navbar-container">
           <Navbar />
         </div>
 
         {/* --------------Card ----------*/}
-        <div className="card-container">
+        <div className="gallery_container">
           {error ? (
             <Error404 />
           ) : currenRecipes.length === 0 ? (
@@ -67,7 +66,7 @@ const Home = () => {
             </div>
           )}
         </div>
-     
+      </div>
     </div>
   );
 };

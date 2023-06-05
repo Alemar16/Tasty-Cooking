@@ -14,7 +14,7 @@ import {
 } from './actions';
 /* const api = axios.create({
   baseURL: process.env.REACT_APP_API || 'http://localhost:3001',
-}); */
+}); */ 
 
 /* --------------lISTAR TODAS LAS RECIPES-------------- */
 export const getAllrecipes = () => {

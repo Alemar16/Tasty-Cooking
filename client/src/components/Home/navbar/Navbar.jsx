@@ -52,13 +52,13 @@ const Navbar = () => {
         <div className="linkedit">
           <a
             href="https://www.linkedin.com/in/armando-mart%C3%ADnez-zambrano-51a714247/"
-            target="_black"
+            target="_blank"
           >
             <img src={linkedith} alt="linkedint" />
           </a>
         </div>
         <div className="github">
-          <a href="https://github.com/Alemar16" target="_black">
+          <a href="https://github.com/Alemar16" target="_blank">
             <img src={github} alt="github" />
           </a>
         </div>
