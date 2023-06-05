@@ -7,9 +7,9 @@ const getApiInfo = async () => {
   const lengthdata = await Recipe.findAll();
   if (lengthdata.length < 100) {
     const urlApi = await axios.get(
-      `https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`
+      // `https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`
 
-      /* `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true` */
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true` 
     );
     let info = [];
     urlApi.data.results.map(async (el) => {

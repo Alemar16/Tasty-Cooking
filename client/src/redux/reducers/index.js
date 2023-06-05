@@ -10,7 +10,7 @@ import {
   POST_ADD_RECIPES,
   FILTER_DB_OR_API,
   SET_ERROR,
-} from '../actions/actions';
+} from "../actions/actions";
 const initialState = {
   recipes: [],
   /* recipesfiterdit: [], */ //copia de recipes
@@ -53,12 +53,12 @@ const Reducer = (state = initialState, action) => {
       };
     }
     case FILTER_BY_DIET: {
-      const allrecipes = state.allrecipes;
+      const allrecipesDiets = state.allrecipes;
       const recipesFilterdiet =
-        action.payload === 'all'
-          ? allrecipes
-          : allrecipes.filter((el) => {
-              let names = el.diets.map((d) => d.name);
+        action.payload === "all"
+          ? allrecipesDiets
+          : allrecipesDiets.filter((el) => {
+              let names = el.diets.map((d) => d);
               if (names.includes(action.payload)) return el;
             });
 
@@ -80,11 +80,11 @@ const Reducer = (state = initialState, action) => {
       } */
 
       let sortArray = [...state.recipes].sort((a, b) => {
-        if (a.name > b.name) return action.payload === 'asc' ? 1 : -1
-        if (a.name < b.name) return action.payload === 'des' ? 1 : -1
+        if (a.name > b.name) return action.payload === "asc" ? 1 : -1;
+        if (a.name < b.name) return action.payload === "des" ? 1 : -1;
         else return 0;
-      })
-        /* action.payload === 'asc'
+      });
+      /* action.payload === 'asc'
           ? state.recipes.sort(function (a, b) {
               if (a.name > b.name) return 1;
               if (a.name < b.name) {
@@ -92,7 +92,7 @@ const Reducer = (state = initialState, action) => {
               } else return 0;
             })
           : /* forma desendente DES */
-            /* state.recipes.sort(function (a, b) {
+      /* state.recipes.sort(function (a, b) {
               if (a.name > b.name) return -1;
               if (a.name < b.name) return 1;
               else return 0; */
@@ -110,12 +110,14 @@ const Reducer = (state = initialState, action) => {
     }
     case ORDER_BY_SCORE: {
       let sortscore = [...state.recipes].sort((a, b) => {
-        if (a.healthScore > b.healthScore) return action.payload === 'asc' ? 1 : -1
-        if (a.healthScore < b.healthScore) return action.payload === 'des' ? 1 : -1
+        if (a.healthScore > b.healthScore)
+          return action.payload === "asc" ? 1 : -1;
+        if (a.healthScore < b.healthScore)
+          return action.payload === "des" ? 1 : -1;
         else return 0;
-      }) 
+      });
 
-        /* action.payload === 'asc'
+      /* action.payload === 'asc'
           ? state.recipes.sort(function (a, b) {
               if (a.healthScore > b.healthScore) return 1;
               if (a.healthScore < b.healthScore) return -1;
@@ -142,13 +144,13 @@ const Reducer = (state = initialState, action) => {
     case FILTER_DB_OR_API: {
       const allcreated = state.allrecipes;
       const createFilter =
-        action.payload === 'created'
+        action.payload === "created"
           ? allcreated.filter((el) => el.createIndb === true)
           : allcreated.filter((el) => el.createIndb === undefined);
 
       return {
         ...state,
-        recipes: action.payload === 'all' ? state.allrecipes : createFilter,
+        recipes: action.payload === "all" ? state.allrecipes : createFilter,
         page: 1,
       };
     }

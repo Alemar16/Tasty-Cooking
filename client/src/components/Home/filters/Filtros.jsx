@@ -25,7 +25,9 @@ export default function Filtros({ diet }) {
   }
 
   function handleFilterDiets(e) {
+    console.log(handleFilterDiets);
     dispatch(filterBydiet(e.target.value));
+    
   }
 
   function handleFilterCreated(e) {
