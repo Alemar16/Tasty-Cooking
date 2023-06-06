@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { getAllrecipes } from "../../../redux/actions";
+import { getAllrecipes, paginado } from "../../../redux/actions";
 import "./Filter.css";
 import {
   orderByaz,
@@ -14,6 +14,7 @@ export default function Filtros({ diet }) {
 
   function handleOderByname(e) {
     dispatch(orderByaz(e.target.value));
+     dispatch(paginado(1));
     /* setOrder(e.target.value); */
   }
   /* ordenar  por Score Puntuacion */
@@ -21,17 +22,20 @@ export default function Filtros({ diet }) {
   function handleOrderScore(e) {
     console.log(handleOrderScore);
     dispatch(orderByscore(e.target.value));
+     dispatch(paginado(1));
     /* setScore(e.target.value); */
   }
 
   function handleFilterDiets(e) {
     console.log(handleFilterDiets);
     dispatch(filterBydiet(e.target.value));
+     dispatch(paginado(1));
     
   }
 
   function handleFilterCreated(e) {
     dispatch(filtercreated(e.target.value));
+     dispatch(paginado(1));
   }
 
   /* corregir handle reset filter */

@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-/* Exportando la Conexion */
+
 module.exports = (sequelize) => {
-  /* Definimos el Models */
+  
   sequelize.define(
     'recipe',
     {
@@ -26,9 +26,9 @@ module.exports = (sequelize) => {
           max: 100,
         },
       },
-      /* hace Referencia al paso a paso de la comida */
+      
       stepbyStep: {
-        /* type: DataTypes.STRING, */
+       
         type: DataTypes.ARRAY(DataTypes.TEXT),
       },
       image: {

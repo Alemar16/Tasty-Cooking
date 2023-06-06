@@ -55,7 +55,7 @@ export function postAddRecipes(payload) {
 }
 
 /* ---------------LISTAR TODAS LAS  DIETAS--------------- */
-export function getAllDiet() {
+/* export function getAllDiet() {
   return async function (dispatch) {
     try {
       var dietas = await axios.get('/diet');
@@ -67,10 +67,29 @@ export function getAllDiet() {
       console.log('No se Han podido cargar las dietas');
     }
   };
+} */
+
+export function getAllDiet() {
+  return function (dispatch) {
+    return axios
+      .get("/diet")
+      .then((response) => {
+        dispatch({
+          type: GET_ALL_DIET,
+          payload: response.data,
+        });
+        return response.data;
+      })
+      .catch((error) => {
+        console.log("No se han podido cargar las dietas");
+        throw error;
+      });
+  };
 }
 
+
 /* BUSCAR LAS RECIPES POR NOMBRE */
-export const getNamerecipes = (name) => {
+/* export const getNamerecipes = (name) => {
   return async function (dispatch) {
     try {
       let json = await axios.get('recipes/all?name=' + name);
@@ -82,7 +101,24 @@ export const getNamerecipes = (name) => {
       dispatch({ type: SET_ERROR, payload: err });
     }
   };
+}; */
+
+export const getNamerecipes = (name) => {
+  return function (dispatch) {
+    return axios
+      .get("recipes/all?name=" + name)
+      .then((response) => {
+        dispatch({
+          type: SEARCH_NAME_RECYPE,
+          payload: response.data,
+        });
+      })
+      .catch((err) => {
+        dispatch({ type: SET_ERROR, payload: err });
+      });
+  };
 };
+
 
 /* --------------BUSCAR RECIPE POR ID-------------- */
 export const recipesDetils = (id) => {

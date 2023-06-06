@@ -7,9 +7,9 @@ module.exports = {
     const lengthdata = await Diet.findByPk(1);
     if (!lengthdata) {
       const dietApi = await axios.get(
-        // `https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`
+         `https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`
 
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true`
+        //`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true`
       );
       const diet = await dietApi.data.results.map((el) => el.diets);
       let data = diet.flat();

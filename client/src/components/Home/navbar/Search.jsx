@@ -3,7 +3,10 @@ import { React } from 'react';
 import { paginado } from '../../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNamerecipes } from '../../../redux/actions/index';
-import './navbar.css';
+//import './navbar.css';
+import styles from "./Search.module.css";
+
+
 export default function Search() {
   const dispatch = useDispatch();
   /*  const pagereset = useSelector((state) => state.page);  */
@@ -18,13 +21,13 @@ export default function Search() {
 
   return (
     <div>
-      <div className="container__shear">
-        <div>
-          <input
-            onChange={handleInputChange}
-            type="text"
-            placeholder="search Recipe"
-          />
+      <div className={styles.container__shear}>
+        <input
+          onChange={handleInputChange}
+          type="text"
+          placeholder="     Search Recipe"
+        ></input>
+        <div className={styles.icon_search}>
         </div>
       </div>
     </div>

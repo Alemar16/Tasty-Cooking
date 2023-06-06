@@ -8,11 +8,9 @@ const Search = () => {
         <input type="text" placeholder="Ingrese el Nombre de una Recype" />
       </div>
 
-      <div>
-        <h2>aun No se</h2>
-      </div>
+  
     </div>
   );
 };
 
-export default Search;
+
