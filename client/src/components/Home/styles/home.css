@@ -67,13 +67,25 @@
 .gallery_container {
   position: fixed;
   top: 145px;
-  left: 65%;
+  left: 60%;
   transform: translateX(-50%);
-  width: 80%;
+  width: 70%;
   max-width: 1200px;
   height: calc(100vh - 150px);
   overflow-y: scroll;
   margin: 0;
+}
+.gallery_container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.gallery_container::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #fdc50f, #fb982f);
+  border-radius: 10px;
+}
+
+.gallery_container::-webkit-scrollbar-track {
+  background: rgba(34, 33, 33, 0.65);
 }
 
 .gallary_image_box {

@@ -62,8 +62,6 @@
 }
 
 .menu__info .diet__info {
-  
-
   display: flex;
   padding: px;
   justify-content: center;
@@ -73,6 +71,19 @@
   min-height: 60px;
   overflow-y: auto;
 }
+.menu__info .diet__info::-webkit-scrollbar {
+  width: 5px;
+}
+
+.menu__info .diet__info::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #fdc50f, #fb982f);
+  border-radius: 10px;
+}
+
+.menu__info .diet__info::-webkit-scrollbar-track {
+  background: rgba(34, 33, 33, 0.65);
+}
+
 
 .menu__info .menu__bt {
   display: flex;
