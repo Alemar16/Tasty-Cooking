@@ -122,18 +122,7 @@ export default function Recipes() {
         {/* formulario */}
         <div className="container__forms">
           <div className="container__logo">
-            {/* <div>
-                {!input.image.trim() ? (
-                  <img src={food} alt="no hay imagen" width="300px" />
-                ) : (
-                  <img
-                    src={input.image}
-                    alt="no hay imagen"
-                    width="300px"
-                    height="270px"
-                  />
-                )}
-              </div> */}
+           
           </div>
           <div className={styles.forms__info}>
             <h1>NEW RECIPE</h1>

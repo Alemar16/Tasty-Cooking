@@ -70,32 +70,13 @@ const Reducer = (state = initialState, action) => {
     }
 
     case ORDER_BY_NAME:
-      /* localeCompare */
-      /* 
-      const sortArray = [...state.recipes];
-      if (action.payload === 'asc') {
-        sortArray.sort((a, b) => a.name.localeCompare(b.name));
-      } else if (action.payload === 'des') {
-        sortArray.sort((a, b) => b.name.localeCompare(a.name));
-      } */
-
+    
       let sortArray = [...state.recipes].sort((a, b) => {
         if (a.name > b.name) return action.payload === "asc" ? 1 : -1;
         if (a.name < b.name) return action.payload === "des" ? 1 : -1;
         else return 0;
       });
-      /* action.payload === 'asc'
-          ? state.recipes.sort(function (a, b) {
-              if (a.name > b.name) return 1;
-              if (a.name < b.name) {
-                return -1;
-              } else return 0;
-            })
-          : /* forma desendente DES */
-      /* state.recipes.sort(function (a, b) {
-              if (a.name > b.name) return -1;
-              if (a.name < b.name) return 1;
-              else return 0; */
+      
 
       return {
         ...state,
@@ -117,17 +98,7 @@ const Reducer = (state = initialState, action) => {
         else return 0;
       });
 
-      /* action.payload === 'asc'
-          ? state.recipes.sort(function (a, b) {
-              if (a.healthScore > b.healthScore) return 1;
-              if (a.healthScore < b.healthScore) return -1;
-              else return 0;
-            })
-          : state.recipes.sort(function (a, b) {
-              if (a.healthScore > b.healthScore) return -1;
-              if (a.healthScore < b.healthScore) return 1;
-              else return 0;
-            }); */
+  
 
       return {
         ...state,
